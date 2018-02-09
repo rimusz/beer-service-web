@@ -2,7 +2,7 @@
 
 # setup helm
 echo "Installing helm"
-./get_helm.sh
+.buildkite/get_helm.sh
 echo "--- Configuring Helm cli :rocket:"
 export HELM_HOME="${PWD}/.buildkite/.helm"
 helm init -c
