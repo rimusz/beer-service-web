@@ -29,9 +29,9 @@ else
     echo " "
     echo "Downloading ${LATEST_HELM} of 'helm' cli"
     curl -k -L http://storage.googleapis.com/kubernetes-helm/helm-${LATEST_HELM}-linux-amd64.tar.gz > /tmp/helm.tar.gz
-    tar xvf /tmp/helm.tar.gz -C /tmp --strip=1 linux-amd64/helm > /dev/null 2>&1
-    chmod +x /tmp/helm
-    mv -f /tmp/helm /usr/local/bin/helm
+    tar xvf /tmp/helm.tar.gz -C /tmp linux-amd64/helm > /dev/null 2>&1
+    chmod +x /tmp/linux-amd64/helm
+    mv -f /tmp/linux-amd64/helm /usr/local/bin/helm
     rm -f /tmp/helm.tar.gz
     echo " "
     echo "Installed ${LATEST_HELM} of 'helm' cli to /usr/local/bin ..."
