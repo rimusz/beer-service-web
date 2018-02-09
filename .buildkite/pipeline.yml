@@ -1,0 +1,14 @@
+steps:
+
+# Release
+  - name: "Build :docker: image and push it to registry :rocket:"
+    command: .buildkite/build.sh
+    branches: release
+    agents:
+      role: k8s-on-dcos
+  - wait
+  - name: "Deploy :docker: image to Staging"
+    command: .buildkite/deploy.sh
+    branches: release
+    agents:
+      role: k8s-on-dcos
