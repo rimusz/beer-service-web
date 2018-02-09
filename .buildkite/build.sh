@@ -9,26 +9,12 @@ IMAGE=beer-service-web
 # use buildkite commit hash as a TAG
 TAG=${BUILDKITE_COMMIT::8}
 
-# make tmp folder
-#mkdir /tmp
-#cd /tmp
-
-#  clone repo
-#git clone ${BUILDKITE_REPO}
-
-# cd to pulled repo folder
-# cd ${BUILDKITE_PIPELINE_SLUG}
-
 # checkout branch
 git checkout ${BUILDKITE_BRANCH}
 
 # build docker image
 echo -e "\n--- Building :docker: image ${IMAGE}:${TAG}"
 docker build -t ${IMAGE}:${TAG} .
-
-# cleaning up repo folder
-#echo "--- Cleaning up git repo folder ${BUILDKITE_PIPELINE_SLUG}"
-#rm -rf /tmp/${BUILDKITE_PIPELINE_SLUG}
 
 # tag docker image
 docker tag ${IMAGE}:${TAG} ${DOCKER_REPO}/${IMAGE}:${TAG}

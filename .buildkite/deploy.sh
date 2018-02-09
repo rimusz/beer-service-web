@@ -2,7 +2,7 @@
 
 # setup helm
 echo "Installing helm"
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+./get_helm.sh
 echo "--- Configuring Helm cli :rocket:"
 export HELM_HOME="${PWD}/.buildkite/.helm"
 helm init -c
