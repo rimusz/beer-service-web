@@ -17,7 +17,7 @@ cd /tmp
 #git clone ${BUILDKITE_REPO}
 
 # cd to pulled repo folder
-cd ${BUILDKITE_PIPELINE_SLUG}
+# cd ${BUILDKITE_PIPELINE_SLUG}
 
 # checkout branch
 git checkout ${BUILDKITE_BRANCH}
