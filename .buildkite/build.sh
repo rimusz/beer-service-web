@@ -14,7 +14,7 @@ mkdir /tmp
 cd /tmp
 
 #  clone repo
-git clone ${BUILDKITE_REPO}
+#git clone ${BUILDKITE_REPO}
 
 # cd to pulled repo folder
 cd ${BUILDKITE_PIPELINE_SLUG}
