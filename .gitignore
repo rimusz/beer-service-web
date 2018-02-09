@@ -16,3 +16,4 @@
 install_buildkite.sh
 robot.creds
 buildkite.token
+buildkite.key

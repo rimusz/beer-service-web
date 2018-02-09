@@ -7,7 +7,7 @@ steps:
     agents:
       role: k8s-on-dcos
   - wait
-  - name: "Deploy :docker: image to Staging"
+  - name: "Deploy :docker: image to Kubernetes cluster"
     command: .buildkite/deploy.sh
     branches: release
     agents:
