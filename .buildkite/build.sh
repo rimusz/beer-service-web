@@ -9,9 +9,6 @@ IMAGE=beer-service-web
 # use buildkite commit hash as a TAG
 TAG=${BUILDKITE_COMMIT::8}
 
-# checkout branch
-git checkout ${BUILDKITE_BRANCH}
-
 # build docker image
 echo -e "\n--- Building :docker: image ${IMAGE}:${TAG}"
 docker build -t ${IMAGE}:${TAG} .
