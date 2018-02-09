@@ -10,8 +10,8 @@ IMAGE=beer-service-web
 TAG=${BUILDKITE_COMMIT::8}
 
 # make tmp folder
-mkdir /tmp
-cd /tmp
+#mkdir /tmp
+#cd /tmp
 
 #  clone repo
 #git clone ${BUILDKITE_REPO}
@@ -27,8 +27,8 @@ echo -e "\n--- Building :docker: image ${IMAGE}:${TAG}"
 docker build -t ${IMAGE}:${TAG} .
 
 # cleaning up repo folder
-echo "--- Cleaning up git repo folder ${BUILDKITE_PIPELINE_SLUG}"
-rm -rf /tmp/${BUILDKITE_PIPELINE_SLUG}
+#echo "--- Cleaning up git repo folder ${BUILDKITE_PIPELINE_SLUG}"
+#rm -rf /tmp/${BUILDKITE_PIPELINE_SLUG}
 
 # tag docker image
 docker tag ${IMAGE}:${TAG} ${DOCKER_REPO}/${IMAGE}:${TAG}
